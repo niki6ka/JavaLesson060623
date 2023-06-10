@@ -8,17 +8,17 @@
 //Пункты реализовать в методе main
 public class Main {
     public static void main (String[] args) {
-        int i = (int) (Math.random() * 2000);
+        int i = (int) (Math.random() * 2000);//1. Выбросить случайное целое число в диапазоне от 0 до 2000 и сохранить в i
         System.out.println(i);
 
-        String convert = Integer.toBinaryString(i);
+        String convert = Integer.toBinaryString(i);// Перевод в двоичный формат
         int leng = 0;
         int bit = 0;
 
 
 
 
-        if (i == 1) {String convert1 = (new StringBuilder(convert)).insert(0, "000").toString();
+        if (i == 1) {String convert1 = (new StringBuilder(convert)).insert(0, "000").toString(); // Добавлялка нулей для корректной работы с числами до 7 
             System.out.println(convert1);
             leng = convert1.length();
             bit = convert1.indexOf("1");}
@@ -37,7 +37,7 @@ public class Main {
         }
 
 
-        int n = leng - bit - 1;
+        int n = leng - bit - 1; //2. Посчитать и сохранить в n номер старшего значащего бита выпавшего числа
 
 
         System.out.println(n);
@@ -45,15 +45,17 @@ public class Main {
 
 
 
-        int len_arr1 = 32767 - i; // SHORT MAX_VALUE
-        int len_arr2 = 32768 - i; // SHORT MIN_VALUE
+        int len_arr1 = 32767 - i; // Высчитывалка диапазона до МАКС ВАЛУЕ
+        int len_arr2 = 32768 - i; // Высчитывалка диапазона от МИН ВАЛУЕ
+        
+        // Загонялки в массив и печаталки хоть и не нужно по заданию но надо же проверить
 
         int k = 0;
         int[] m1 = new int[len_arr1];
         for (int j = i; j <= 32767; j++) {
         if ((j % n == 0)) {
                 m1[k] = j;
-                System.out.println(k + " " +m1[k]);
+                //System.out.println(k + " " +m1[k]);
                 k++;
                 }
          }
@@ -64,7 +66,7 @@ public class Main {
                 while (t != i) {
                     if ((t % n != 0)) {
                         m2[r] = t;
-                        System.out.println(r + " " +m2[r]);
+                        //System.out.println(r + " " +m2[r]);
                         r++;
                     }
                     t++;
